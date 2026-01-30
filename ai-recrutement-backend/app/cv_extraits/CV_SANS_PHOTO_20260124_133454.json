@@ -1,0 +1,58 @@
+{
+  "nom": "Latifa Ait Hammou",
+  "email": "latifaait@gmail.com",
+  "telephone": "+212 706451366",
+  "competences": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "PHP",
+    "C",
+    "C++",
+    "Python",
+    "MySQL",
+    "Git",
+    "GitHub",
+    "Canva",
+    "Adaptability",
+    "Problem-Solving",
+    "Creativity",
+    "Time Management",
+    "Critical Thinking",
+    "Leadership"
+  ],
+  "experiences": [
+    {
+      "poste": "Web Development Internship",
+      "entreprise": "Codsoft",
+      "periode": "October 11, 2024 – November 11, 2024",
+      "description": "Created a flower website using HTML, CSS, and JavaScript. Developed a personal portfolio and a web calculator. Enhanced front-end development skills."
+    }
+  ],
+  "formations": [
+    {
+      "diplome": "Engineering Degree in Computer Science",
+      "etablissement": "National School of Applied Sciences of Marrakech (ENSA Marrakech)",
+      "annee": "2023 - Present"
+    },
+    {
+      "diplome": "Baccalaureate in Physical Sciences",
+      "etablissement": null,
+      "annee": "2022"
+    }
+  ],
+  "langues": [
+    {
+      "langue": "French",
+      "niveau": "Fluent"
+    },
+    {
+      "langue": "English",
+      "niveau": "Intermediate"
+    },
+    {
+      "langue": "Arabic",
+      "niveau": "Native Language"
+    }
+  ]
+}

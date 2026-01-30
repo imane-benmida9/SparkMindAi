@@ -1,0 +1,23 @@
+.app-header__title {
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .app-sidebar {
+    width: 72px;
+    min-width: 72px;
+  }
+  .app-sidebar__logo span:last-child,
+  .app-sidebar__item span:last-child,
+  .app-sidebar__footer p,
+  .app-sidebar__footer .btn span {
+    display: none;
+  }
+  .app-sidebar__item {
+    justify-content: center;
+    padding: 0.75rem;
+  }
+  .app-main {
+    margin-left: 72px;
+  }
+}

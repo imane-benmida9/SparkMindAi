@@ -1,0 +1,68 @@
+{
+  "matching_direct": {
+    "score_final": 88.14,
+    "recommandation": "EXCELLENT",
+    "details": {
+      "similarite_semantique": 90.35,
+      "competences": {
+        "score": 100.0,
+        "trouvees": [
+          "Python"
+        ],
+        "manquantes": []
+      },
+      "experience": {
+        "score": 100.0,
+        "annees_candidat": 0,
+        "annees_requises": 0
+      },
+      "formation": {
+        "score": 20.0,
+        "niveau_candidat": 0,
+        "niveau_requis": 3
+      },
+      "langues": {
+        "score": 100.0,
+        "trouvees": [
+          "Français"
+        ],
+        "manquantes": []
+      }
+    },
+    "explications": {
+      "pour_recruteur": {
+        "points_forts": [
+          "Compétences techniques en Python",
+          "Expérience non requise pour le poste",
+          "Maîtrise de la langue française"
+        ],
+        "points_faibles": [
+          "Faible niveau de formation (20%)",
+          "Manque d'expérience professionnelle"
+        ],
+        "recommandation": "RECRUTER",
+        "synthese": "Le candidat présente un excellent profil technique pour le poste de Développeur Python Junior, avec une similarité sémantique élevée et des compétences techniques requises. Cependant, son niveau de formation est faible. Le score de matching élevé (88,14%) justifie une recommandation de recrutement."
+      },
+      "pour_candidat": {
+        "message_principal": "Félicitations ! Votre profil correspond très bien à l'offre d'emploi de Développeur Python Junior, avec un score de matching de 88,14%. Vous avez les compétences requises pour ce poste et une bonne maîtrise de la langue française.",
+        "compétences_valorises": [
+          "Python",
+          "Français"
+        ],
+        "axes_d'amélioration": [
+          "Expérience professionnelle (0 an)"
+        ],
+        "conseils_concrets": [
+          "Poursuivez votre apprentissage en Python et explorez les différents frameworks et bibliothèques associés pour élargir vos compétences.",
+          "Recherchez des opportunités de stages ou de projets personnels pour acquérir de l'expérience pratique et construire un portfolio de réalisations.",
+          "Considérez la possibilité de suivre des cours ou des formations complémentaires pour approfondir vos connaissances en développement logiciel et améliorer vos chances de réussite dans ce domaine."
+        ]
+      }
+    }
+  },
+  "recherche_vectorielle": {
+    "cv_id": "cv_test_export",
+    "distance": 1.0443145036697388,
+    "similarite": -0.04431450366973877
+  }
+}

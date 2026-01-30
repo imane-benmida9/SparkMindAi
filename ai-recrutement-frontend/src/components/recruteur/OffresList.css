@@ -1,0 +1,50 @@
+.offres-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.offre-card {
+  padding: 1.25rem;
+  position: relative;
+}
+
+.offre-card__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.offre-card__desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.5;
+}
+
+.offre-card__meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.offre-card__statut {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.offre-card__statut[data-statut="ouverte"] {
+  background: #d1fae5;
+  color: var(--color-success);
+}
+
+.offre-card__statut[data-statut="fermee"] {
+  background: #fee2e2;
+  color: var(--color-error);
+}

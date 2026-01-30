@@ -1,0 +1,52 @@
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.job-card {
+  padding: 1.25rem;
+}
+
+.job-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-card__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.job-card__location {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.job-card__desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.5;
+}
+
+.job-card__meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.job-card__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.matching-result-card {
+  margin-top: 1.5rem;
+  max-width: 480px;
+}

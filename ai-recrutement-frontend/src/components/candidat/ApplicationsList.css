@@ -1,0 +1,52 @@
+.applications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.application-card {
+  padding: 1.25rem;
+}
+
+.application-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.application-card__statut {
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.application-card__statut[data-statut="accepted"] {
+  color: var(--color-success);
+}
+
+.application-card__statut[data-statut="rejected"] {
+  color: var(--color-error);
+}
+
+.application-card__statut[data-statut="pending"] {
+  color: var(--color-warning);
+}
+
+.application-card__date {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.application-card__meta {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0 0 0.5rem 0;
+}
+
+.application-card__explication {
+  font-size: 0.875rem;
+  margin: 0.5rem 0 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text);
+}
