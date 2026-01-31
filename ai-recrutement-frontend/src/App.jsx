@@ -2,11 +2,15 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useState, useEffect, createContext, useContext } from 'react';
 import { getMe, getStoredUser, setStoredUser, setTokens, logout } from './services/authService';
 
+// Dans vos routes protégées pour recruteur :
+
 import Layout from './components/shared/Layout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import Candidat from './pages/Candidat';
+import RecruteurCandidatures  from './pages/RecruteurCandidatures';
+import MatchingAnalyse from './pages/Matchinganalyse';
 import Recruteur from './pages/Recruteur';
 
 const AuthContext = createContext(null);
@@ -99,6 +103,17 @@ export default function App() {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/recruteur/candidatures"
+            element={
+              <ProtectedRoute role="recruteur">
+              <Layout role="recruteur">
+              <RecruteurCandidatures />
+              </Layout>
+              </ProtectedRoute>
+           }
+          />
+        
           <Route
             path="/recruteur/*"
             element={

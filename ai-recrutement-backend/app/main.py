@@ -10,7 +10,7 @@ from app.api.offres import router as offres_router
 from app.api.candidats import router as candidats_router
 from app.api.candidatures import router as candidatures_router
 from app.api.matching import router as matching_router
-
+from app.api.dashboard_api import router as dashboard_router
 # -------------------------------------------------
 # Setup logging
 # -------------------------------------------------
@@ -60,3 +60,4 @@ app.include_router(offres_router)      # ✅ AJOUT
 app.include_router(candidats_router)
 app.include_router(candidatures_router)
 app.include_router(matching_router)
+app.include_router(dashboard_router)

@@ -25,6 +25,10 @@ class CandidatureCreate(BaseModel):
     cv_id: str = Field(..., description="ID du CV utilisé pour la candidature")
 
 
+class CandidatureStatutUpdate(BaseModel):
+    statut: str = Field(..., description="Nouveau statut: pending, interview, accepted, rejected")
+
+
 def _candidature_to_response(c: Candidature) -> dict:
     return {
         "id": c.id,
@@ -121,7 +125,7 @@ def list_candidatures(
         if not offre_id:
             raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="offre_id requis pour le recruteur")
         # Offres du recruteur uniquement
-        offres_ids = [o.id for o in db.query(OffreEmploi.id).filter(OffreEmploi.recruteur_id == recruteur.id).all()]
+        offres_ids = [str(o.id) for o in db.query(OffreEmploi).filter(OffreEmploi.recruteur_id == recruteur.id).all()]
         if offre_id not in offres_ids:
             raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Offre non autorisée")
         q = db.query(Candidature).filter(Candidature.offre_id == offre_id)
@@ -153,3 +157,42 @@ def get_candidature(
             raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Accès non autorisé")
 
     return _candidature_to_response(c)
+
+
+# ---------- Changer le statut d'une candidature (recruteur) ----------
+@router.patch("/{candidature_id}/statut", response_model=dict)
+def update_candidature_statut(
+    candidature_id: str,
+    body: CandidatureStatutUpdate,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(require_roles("recruteur")),
+):
+    """Change le statut d'une candidature (recruteur uniquement)."""
+    valid_statuts = ["pending", "interview", "accepted", "rejected"]
+    if body.statut not in valid_statuts:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Statut invalide. Valeurs autorisées: {', '.join(valid_statuts)}"
+        )
+    
+    candidature = db.query(Candidature).filter(Candidature.id == candidature_id).first()
+    if not candidature:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Candidature introuvable"
+        )
+    
+    offre = db.query(OffreEmploi).filter(OffreEmploi.id == candidature.offre_id).first()
+    recruteur = get_recruteur_by_user_id(db, current_user.id)
+    
+    if not recruteur or not offre or offre.recruteur_id != recruteur.id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Vous n'êtes pas autorisé à modifier cette candidature"
+        )
+    
+    candidature.statut = body.statut
+    db.commit()
+    db.refresh(candidature)
+    
+    return _candidature_to_response(candidature)
