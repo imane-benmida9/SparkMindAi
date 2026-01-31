@@ -36,7 +36,7 @@ export default function Register() {
   return (
     <div className="auth-page">
       <div className="auth-card card">
-        <div className="auth-card__logo">🎯 AI Recruitment</div>
+        <div className="auth-card__logo">🎯 SparkMindAI</div>
         <h1 className="auth-card__title">Inscription</h1>
         <p className="auth-card__subtitle">Créez votre compte candidat ou recruteur</p>
         <form onSubmit={handleSubmit} className="auth-form">

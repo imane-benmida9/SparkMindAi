@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div className="home-page">
       <div className="home-hero">
-        <h1 className="home-hero__title">🎯 AI Recruitment</h1>
+        <h1 className="home-hero__title">🎯 SparkMindAI</h1>
         <p className="home-hero__subtitle">
           Plateforme de recrutement intelligente : matching CV–offres par IA, analyse de CV et recommandations.
         </p>
